@@ -10,6 +10,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableNativeArray;
+import com.facebook.react.module.annotations.ReactModule;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +24,7 @@ import li.yunqi.rnsecurestorage.cipherstorage.CipherStorageKeystoreAESCBC;
 import li.yunqi.rnsecurestorage.exceptions.CryptoFailedException;
 import li.yunqi.rnsecurestorage.exceptions.EmptyParameterException;
 
+@ReactModule(name = RNSecureStorageModule.SECURE_STORAGE_MODULE)
 public class RNSecureStorageModule extends ReactContextBaseJavaModule {
 
     public static final String E_EMPTY_PARAMETERS = "E_EMPTY_PARAMETERS";
@@ -153,7 +155,7 @@ public class RNSecureStorageModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return SECURE_STORAGE_MODULE;
+        return this.SECURE_STORAGE_MODULE;
     }
 
     // The "Current" CipherStorage is the cipherStorage with the highest API level that is lower than or equal to the current API level
